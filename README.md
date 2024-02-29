@@ -1,7 +1,9 @@
 # TICK
 A minimalist 8-bit "TTL" microcomputer based on a bit-serial ALU 
 
-TICK is a variation of my MITE and SPIDER bit serial machines.  SPIDER provided the test bed for the discrete logic, bit-serial ALU. 
+TICK is a variation of my MITE and SPIDER bit serial machines.  
+
+SPIDER provided the test bed for the discrete logic, bit-serial ALU. 
 
 MITE further refined the ALU and timing pulse generator into just a 6 package module, and equipped it with 8-bit parallel interfaces, suitable for connecting with a standard parallel, tristate memory data bus.
 
