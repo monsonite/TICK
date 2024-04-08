@@ -26,6 +26,12 @@ The advantage of the bit-serial design is that it can easily be extended from 8-
 
 TICK is an experimental machine, and with only about 20 ICs, which can be prototyped onto 5 to 8 standard breadboards, or fit onto a low-cost 10 x 10 cm pcb.
 
+![Breadboards](https://github.com/monsonite/TICK/assets/758847/54edd090-5425-4285-8618-5579dcbcf4ba)
+
+![SRAM_NANO](https://github.com/monsonite/TICK/assets/758847/4aa6a902-1ecf-499a-a364-40c40dc478d5)
+
+
+
 ![Testboard_13](https://github.com/monsonite/TICK/assets/758847/551e335b-3515-4c64-a161-1538116b4a4d)
 
 
