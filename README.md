@@ -30,12 +30,19 @@ TICK is an experimental machine, and with only about 20 ICs, which can be protot
 
 
 Breadboard #1	ALU and Carry flip-flop
+
 Breadboard #2	Clock oscillator, clock sequencer and timing pulse generator
+
 Breadboard #3	Accumulator AC, Zero Detector, Zero flag, control and jump logic
+
 Breadboard #4	Memory Buffer Register MB
+
 Breadboard #5	Memory Address Register MA
+
 Breadboard #6	Program Counter PC, SRAM 
+
 Breadboard #7	Input/Output
+
 Breadboard #8	Expansion and interface to Arduino Nano - for programming
 
 By putting the pricipal registers AC, MA, MB on their own breadboard, it means that they can easily be extended to 16-bit or 32- bit wordlength, just by "daisy-chaining" more shift register packages in a row, and modifying the clock sequencer for a longer bit-sequence.
