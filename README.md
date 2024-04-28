@@ -159,7 +159,7 @@ As the ALU has 7 input control signals there are theoretically 128 possible inst
 
 ![Instruction_Decoder](https://github.com/monsonite/TICK/assets/758847/ba5bc4b1-c600-4263-8cd9-558a6c101e6e)
 
-#Update 28-04-24
+# Update 28-04-24
 
 Some more progress on the MITE bit serial computer.
 
