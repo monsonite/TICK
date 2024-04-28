@@ -192,4 +192,6 @@ The Arduino is just a convenient way to dial in an instruction and test data to 
 
 7. ALU and PC incrementer, plus any additional combinational glue logic. The PC consists of a pair of 74HC595 shift registers incremented or loaded from the MB register - in a jump condition.
 
+![image](https://github.com/monsonite/TICK/assets/758847/e6eb407d-dcd4-4c1c-9c7a-9980ada55645)
+
 
