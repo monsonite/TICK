@@ -159,6 +159,37 @@ As the ALU has 7 input control signals there are theoretically 128 possible inst
 
 ![Instruction_Decoder](https://github.com/monsonite/TICK/assets/758847/ba5bc4b1-c600-4263-8cd9-558a6c101e6e)
 
+#Update 28-04-24
 
+Some more progress on the MITE bit serial computer.
+
+I can now load the Memory Buffer (MB) register from RAM, in parallel, and then with the one press of a single stepping switch it copies its contents into the Accumulator.
+
+The serial output of the MB register goes directly to the serial input of the Accumulator.  The next stage is to pass this output through the ALU so that can be tested.
+
+Below is the overall view of the device which now takes up 7, sparsely populated breadboards.
+
+The IC count is 17 74HCxx packages and the SRAM. One of the Arduinos will be retained as the laptop interface to the computer memory.
+You will have to open the image to view all the boards.
+
+From the top:
+
+1. LED bar displays to show the contents of the MB register (left) and the Accumulator (right).
+ 
+2. MB (74HC165) left and Accumulator (74HC595) right.
+
+3. SRAM Access. 62256 SRAM, 74HC245 bi-directional tristate buffer, 2 x 74HC595 ( Memory Access Register/ PC) Arduino support module to allow access to contents of RAM.
+ 
+4. LED bar displays to show the contents of the address and data registers. MAR and external bus.
+ 
+5. Clock pulse generator and timing. A 74HC4060 is an oscillator with a 14-stage binary divider. I am currently only clocking it at around 500Hz - so I can see what is happening. You can choose whichever clock division ratio you wish.
+
+The 74HC4060 feeds a 74HC4017 which is a decoded, decade counter. This produces a gating signal that allows a trains of 8 clock pulses to be sent to the shift-registers to co-ordinate their data exchanges.
+
+6. ALU termination connectors and another Arduino module to machine test the ALU.
+The ALU has 8 inputs, of which 3 are the Ain, Bi and Cin from the shift registers
+The Arduino is just a convenient way to dial in an instruction and test data to ensure the output is correct.
+
+7. ALU and PC incrementer, plus any additional combinational glue logic. The PC consists of a pair of 74HC595 shift registers incremented or loaded from the MB register - in a jump condition.
 
 
