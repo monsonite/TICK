@@ -127,13 +127,35 @@ The diode array is just an 8-input OR, it is used to detect zero.
 
 6. Instruction Decoder.
 
-This the Instruction Decoder - this was inspired by Marcel van Kervinck who greated the Gigatron kit.
+This the Instruction Decoder - this was inspired by Marcel van Kervinck who created the Gigatron kit.
 
 It is essentially a tiny ROM based on a diode matrix.
 
-The instruction field is only 3 bits wide, to encode the 8 possible instructions.
+The instruction field is only 3 bits wide, needed to encode the 8 possible instructions.
 
 These three bits are fed into U1 - which is a 74HC138, 3-8 line decoder.
+
+The 3 bit input cause one of the outputs of the 74HC138 to go to logic low, the rest remaining high. From the image you can see that the 8 outputs identify the individual instruction group. Some instructions have multiple options such as choice of operands, destination etc.
+
+LOAD
+
+AND
+
+OR
+
+XOR
+
+ADD
+
+SUB
+
+STORE
+
+JUMP
+
+Further instructions may be added later by decoding a fourth instruction bit.
+
+
 
 In the image I apply the ADD instruction 100 in binary.
 
