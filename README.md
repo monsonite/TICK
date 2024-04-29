@@ -24,7 +24,7 @@ In addition to these registers there are functional blocks of the Clock Sequence
 
 The advantage of the bit-serial design is that it can easily be extended from 8-bits to 16-bits or even 32 bits with very little additional hardware.
 
-TICK is an experimental machine, and with only about 20 ICs, which can be prototyped onto 5 to 8 standard breadboards, or fit onto a low-cost 10 x 10 cm pcb.
+TICK is an experimental machine, and with only about 20 ICs, it may be prototyped onto about 8 standard breadboards, or fit onto a low-cost 10 x 10 cm pcb.
 
 ![Breadboards](https://github.com/monsonite/TICK/assets/758847/54edd090-5425-4285-8618-5579dcbcf4ba)
 
