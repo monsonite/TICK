@@ -1,6 +1,10 @@
 # TICK
 
 
+![image](https://github.com/user-attachments/assets/ef022f57-3bab-4b04-b554-2733f9334b5b)
+
+
+
 A minimalist 8-bit "TTL" microcomputer based on a bit-serial ALU.
 
 TICK is a variation of THE 16-bit MITE, bit serial machine.
@@ -9,7 +13,7 @@ The Accumulator and RAM bus have been truncated to 8-bits. However the Program C
 
 MITE provided the test bed for the discrete logic and bit-serial ALU. 
 
-MITE further refined the ALU and timing pulse generator into just a 6 package module, and equipped it with 8-bit parallel interfaces, suitable for connecting with a standard parallel, tristate memory data bus.
+and TICK further refined the ALU, Program Counter and timing pulse generator into just a 6 package module, and equipped it with 8-bit parallel interfaces, suitable for connecting with a standard parallel, tristate memory data bus.
 
 Only so much can be some in the "Digital" simulator, so now I have begun to build up the design on breadboard, using currently available 74HCxx series logic devices.
 
@@ -33,11 +37,6 @@ TICK is an experimental machine, and with only about 20 ICs, it may be prototype
 
 ![SRAM_NANO](https://github.com/monsonite/TICK/assets/758847/4aa6a902-1ecf-499a-a364-40c40dc478d5)
 
-
-
-![Testboard_13](https://github.com/monsonite/TICK/assets/758847/551e335b-3515-4c64-a161-1538116b4a4d)
-
-
 Breadboard #1	ALU and Carry flip-flop
 
 Breadboard #2	Clock oscillator, clock sequencer and timing pulse generator
@@ -54,7 +53,7 @@ Breadboard #7	Input/Output
 
 Breadboard #8	Expansion and interface to Arduino Nano - for programming
 
-By putting the pricipal registers AC, MA, MB on their own breadboard, it means that they can easily be extended to 16-bit or 32- bit wordlength, just by "daisy-chaining" more shift register packages in a row, and modifying the clock sequencer for a longer bit-sequence.
+By putting the pricipal registers AC, PC, MB on their own breadboard, it means that they can easily be extended to 16-bit or 32- bit wordlength, just by "daisy-chaining" more shift register packages in a row, and modifying the clock sequencer for a longer bit-sequence.
 
 1. ALU and Carry Flipflop
 
