@@ -1,7 +1,8 @@
 # TICK
 
 
-![image](https://github.com/user-attachments/assets/ef022f57-3bab-4b04-b554-2733f9334b5b)
+![TICK_00](https://github.com/user-attachments/assets/a5e35463-268c-4443-a134-3f3562911d83)
+
 
 
 
