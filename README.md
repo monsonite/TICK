@@ -3,7 +3,9 @@
 
 A minimalist 8-bit "TTL" microcomputer based on a bit-serial ALU.
 
-TICK is a variation of my MITE bit serial machine.  
+TICK is a variation of THE 16-bit MITE, bit serial machine.
+
+The Accumulator and RAM bus have been truncated to 8-bits. However the Program Counter and the B-Register remain at 16-bits wide.
 
 MITE provided the test bed for the discrete logic and bit-serial ALU. 
 
@@ -11,16 +13,17 @@ MITE further refined the ALU and timing pulse generator into just a 6 package mo
 
 Only so much can be some in the "Digital" simulator, so now I have begun to build up the design on breadboard, using currently available 74HCxx series logic devices.
 
-This will include an efficient, parallel memory sub-section, to accompany the compact MITE bit serial ALU and a means of programming the contents of the SRAM using an Arduino NANO.
+This will include an efficient, parallel memory sub-section, to accompany the compact TICK bit serial ALU and a means of programming the contents of the SRAM using an Arduino NANO or Raspberry Pi Pico - or clone.
+
 
 TICK - An Experimental 8-bit Bit Serial CPU.
 
 
-TICK is an 8-bit, bit serial machine, with a von Neumann architecture. This means that all instructions and data come from the same memory space - in this case a 32K x 8-bit SRAM.
+TICK is an 8-bit, bit serial machine, with a modified Harvard architecture. This means that a ROM provides instructions and data, and volatile storage of variables is from RAM - in this case a 32K x 8-bit SRAM.
 
-TICK is based around a bit-serial architecture, consisting of an ALU, an Accumulator AC, a Memory Buffer Register MB, a Memory Address Register MA, and a Program Counter PC.
+TICK is based around a bit-serial architecture, consisting of an ALU, an Accumulator AC, a Memory Buffer Register B, and a Program Counter PC.
 
-In addition to these registers there are functional blocks of the Clock Sequencer and Timing Generator CS and TG.
+In addition to these registers there are functional blocks of the Clock Sequencer and Timing Pulse Generator CS and TPG.
 
 The advantage of the bit-serial design is that it can easily be extended from 8-bits to 16-bits or even 32 bits with very little additional hardware.
 
