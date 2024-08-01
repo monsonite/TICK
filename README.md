@@ -13,23 +13,63 @@ TICK is a variation of THE 16-bit MITE, bit serial machine.
 
 The Accumulator and RAM bus have been truncated to 8-bits. However the Program Counter and the B-Register remain at 16-bits wide.
 
-MITE provided the test bed for the discrete logic and bit-serial ALU. 
+MITE provided the test bed for the discrete logic and bit-serial ALU, and TICK further refined the ALU, Program Counter and timing pulse generator into just a 6 package module, and equipped it with 8-bit parallel interfaces, suitable for connecting with a standard parallel, tristate memory data bus.
 
-and TICK further refined the ALU, Program Counter and timing pulse generator into just a 6 package module, and equipped it with 8-bit parallel interfaces, suitable for connecting with a standard parallel, tristate memory data bus.
-
-Only so much can be some in the "Digital" simulator, so now I have begun to build up the design on breadboard, using currently available 74HCxx series logic devices.
+Only so much can be some in the "Digital" simulator, so now the design is being built up on breadboard, usings currently available 74HCxx series logic devices.
 
 This will include an efficient, parallel memory sub-section, to accompany the compact TICK bit serial ALU and a means of programming the contents of the SRAM using an Arduino NANO or Raspberry Pi Pico - or clone.
 
+The ICs used are as follows:
 
-TICK - An Experimental 8-bit Bit Serial CPU.
+U1	AT27C1024 	ROM
+
+U2	74HC595		PC LOW
+
+U3	74HC595		PC HIGH
+
+U4	74HC165		B LOW
+
+U5 	74HC165		B HIGH
+
+U6	74HC4060	CLOCK DIV
+
+U7	74HC00		SR LATCH
+
+U8	74HC161		SEQUENCE COUNTER
+
+U9	74HC175		SEQUENCE FLIP FLOPS
+
+U10	74HC138		INSTRUCTION DECODER
+
+U11	74HC11		DECODE LOGIC
+
+U12	74HC85		DECODE LOGIC
+
+U13	74HC00		DECODE LOGIC
+
+U14	74HC283		FULL ADDER / PC INCREMENTER
+
+U15	74HC126		ALU MUX/ PC MUX
+
+U16	74HC74		CARRY FF / PC FF
+
+U17	74HC299		ACCUMULATOR
+
+U18	62256		RAM
+
+U19	74HC74		CARRY FF / ZERO FF
+
+U20	74HC153		CONDITION DECODER
 
 
-TICK is an 8-bit, bit serial machine, with a modified Harvard architecture. This means that a ROM provides instructions and data, and volatile storage of variables is from RAM - in this case a 32K x 8-bit SRAM.
+## TICK - An Experimental 8-bit Bit Serial CPU.
+
+
+TICK is an 8-bit, bit serial machine, with a modified Harvard architecture. This means that a ROM provides instructions and data, and volatile storage of variables is from RAM - in this case a 32K x 8-bit SRAM. ROM and RAM have separate datapaths and separate ddress buses.
 
 TICK is based around a bit-serial architecture, consisting of an ALU, an Accumulator AC, a Memory Buffer Register B, and a Program Counter PC.
 
-In addition to these registers there are functional blocks of the Clock Sequencer and Timing Pulse Generator CS and TPG.
+In addition to the registers there are functional blocks of the Clock Sequencer and Timing Pulse Generator CS and TPG.
 
 The advantage of the bit-serial design is that it can easily be extended from 8-bits to 16-bits or even 32 bits with very little additional hardware.
 
