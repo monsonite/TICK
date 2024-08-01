@@ -5,6 +5,7 @@
 
 
 
+
 A minimalist 8-bit "TTL" microcomputer based on a bit-serial ALU.
 
 TICK is a variation of THE 16-bit MITE, bit serial machine.
