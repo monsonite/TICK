@@ -4,9 +4,6 @@
 ![TICK_00](https://github.com/user-attachments/assets/a5e35463-268c-4443-a134-3f3562911d83)
 
 
-
-
-
 A minimalist 8-bit "TTL" microcomputer based on a bit-serial ALU.
 
 TICK is a variation of THE 16-bit MITE, bit serial machine.
@@ -17,9 +14,9 @@ MITE provided the test bed for the discrete logic and bit-serial ALU, and TICK f
 
 Only so much can be some in the "Digital" simulator, so now the design is being built up on breadboard, usings currently available 74HCxx series logic devices.
 
-This will include an efficient, parallel memory sub-section, to accompany the compact TICK bit serial ALU and a means of programming the contents of the SRAM using an Arduino NANO or Raspberry Pi Pico - or clone.
+This will include an efficient, parallel memory sub-section, to accompany the compact TICK bit serial ALU and a means of emulating the ROM and programming the contents of the SRAM using an Arduino NANO or Raspberry Pi Pico - or clone.
 
-The ICs used are as follows:
+The 28 ICs used are as follows:
 
 U1	AT27C1024 	ROM
 
@@ -35,13 +32,13 @@ U6	74HC4060	CLOCK DIV
 
 U7	74HC00		SR LATCH
 
-U8	74HC161		SEQUENCE COUNTER
+U8	74HC161		SEQUENCE COUNTER	
 
 U9	74HC175		SEQUENCE FLIP FLOPS
 
 U10	74HC138		INSTRUCTION DECODER
 
-U11	74HC11		DECODE LOGIC
+U11	74HC11		DECODE LOGIC	
 
 U12	74HC85		DECODE LOGIC
 
@@ -59,8 +56,23 @@ U18	62256		RAM
 
 U19	74HC74		CARRY FF / ZERO FF
 
-U20	74HC153		CONDITION DECODER
+U20	74HC00		RAM CONTROL
 
+U21	74HC74		ZERO & CARRY FLAGS
+
+U22	74HC595		SPI INPUT REGISTER
+
+U23	74HC153		CONDITION DECODER
+
+U24	74HC125		BUFFER
+
+U25	74HC125		BUFFER
+
+U26	74HC595		ROMULATOR
+
+U27	74HC595		ROMULATOR
+
+U28	74HC00		SPARE
 
 ## TICK - An Experimental 8-bit Bit Serial CPU.
 
